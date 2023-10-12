@@ -1,0 +1,10 @@
+3	//total
+3	//nombre de monstres pour le premier style 
+2 2 3	// liste des monstres
+2
+11 12
+2
+6 7
+
+// NE SURTOUT PAS METTRE DE 1
+// C'EST DUDU
