@@ -16,7 +16,6 @@ procedure ContactMissileBombe (var it:Item; var tab:tabTaille;var v:Vaisseau; va
 // détermine si il y a contact entre le vaisseau et une bombe, modifie le nombre de vies du vaisseau
 procedure ContactVaisseauBombe(var it:Item; var v:Vaisseau; var tab:tabTaille; var tRefMouvement:TSystemTime; var mortV:boolean; var contactV : boolean);
 
-
 //détermine si il y a contact entre un monstre et une bombe, modifie le score 
 procedure ContactMissileMonstre(var it:Item; var tab:tabTaille; var v:Vaisseau;var boom, boom2, boom3, boom4, boom5 : dataExplo);
 
@@ -26,10 +25,10 @@ procedure Contact (var it:Item; var v:Vaisseau; tab: tabTaille; var explo : tabE
 //détermine si le joueur a perdu
 function GameOver (var it:Item; var v:Vaisseau; tab:tabTaille; tRefMouvement:TSystemTime) : Boolean;
 
-// gère les déplacement et les tires du vaisseau
+// gère les déplacements et les tirs du vaisseau
 procedure gestionVaisseau(var ship : vaisseau; var it : item; tab : tabTaille; var dataShip : dataVaisseau);
 
-// gère le menu skin (affichage du menu et enregistrement du choix de vaisseau et de missiles)
+// permet de sélectionner un vaisseau et un missile
 procedure menuSkin(var ship : vaisseau ;var dataShip : dataVaisseau; tab : tabTaille; i : integer);
 
 // affiche le score sur le menu
@@ -38,10 +37,10 @@ procedure afficheScoreMenu(i : integer);
 // initialise les données nécessaires au déplacement des monstres en fonction des 4 niveaux de difficultés possibles 
 procedure init_monstre(var it: item; ship : vaisseau ; var temps : tab_temps; choix : integer; var descente : integer; var mes_param_monstre : param_deplacement_monstre ; tab : tabTaille);
 
-// génère le déplacement des monstres en fontion des 3 procédures de déplecement possible
+// gére le déplacement des monstres en fontion des 3 procédures de déplecement possible
 procedure deplacement_monstre(var temps : tab_temps;var it : item; ship : vaisseau;var descente, choix : integer; tab : tabTaille;var mes_param_monstre : param_deplacement_monstre);
 
-// génère les vagues de monstres en fontion des 3 procédures de déplecement possible
+// gére les vagues de monstres en fontion des 3 procédures de déplecement possible
 procedure vague(var it : item ;var ship : vaisseau ; tab : tabTaille ;var mes_param_monstre : param_deplacement_monstre;choix : integer ; var temps : tab_temps;var descente : integer);	
 
 // permet de lancer une partie 
@@ -1901,7 +1900,7 @@ BEGIN
 				begin
 				sdl_blitsurface(cache[rangDivers + 22],nil,window_menu,@p);
 				sdl_blitsurface(image[rangDivers + 25],nil,window_menu,@p);
-				ecrire('Selection des vaiiseaux et munitions',740,920,21,0,0,0);
+				ecrire('Selection des vaisseaux et munitions',740,920,21,0,0,0);
 				sdl_flip(window_menu);
 				end
 			{aucun bouton}
@@ -2211,7 +2210,7 @@ BEGIN
 				begin
 				sdl_blitsurface(cache[rangDivers + 48],nil,window_menu,@p);
 				sdl_blitsurface(cache[rangDivers + 32],nil,window_menu,@p);
-				ecrire('Selection des vaiiseaux et munitions',495,615,14,0,0,0);
+				ecrire('Selection des vaisseaux et munitions',495,615,14,0,0,0);
 				affichageMini(tab, dataShip, 2);
 				sdl_blitsurface(cache[rangDivers + 53],nil,window_menu,@p);
 				sdl_flip(window_menu);

@@ -52,13 +52,13 @@ Procedure exploGeneral(var explo : tabExplo);
 // nimation de fin de partie 
 procedure ecranGameOver;
 
-//fonction qui vérifie si des coordonnées catésiennes sont dans un rectangle
+//fonction qui vérifie si des coordonnées cartésiennes sont dans un rectangle
 function clicRectangle(pos1X, pos1Y, pos2X, pos2Y, clicX, clicY : integer): boolean;
 
-//fonction qui vérifie si des coordonnées catésiennes sont dans un cercle
+//fonction qui vérifie si des coordonnées cartésiennes sont dans un cercle
 function clicCercle(oX, oY, rayon, clicX, clicY : integer): boolean;
 
-//retourne les coordonnées catésiennes de la souris après un clic
+//retourne les coordonnées cartésiennes de la souris après un clic
 procedure lectureBoutonSouris(var x, y : longint);
 
 // affiche les coeurs représentant les vies dans le jeu 
@@ -770,7 +770,7 @@ end;
 
 
 
-function clicRectangle(pos1X, pos1Y, pos2X, pos2Y, clicX, clicY : integer): boolean;	//fonction qui vérifie si des coordonnées catésiennes sont dans un rectangle
+function clicRectangle(pos1X, pos1Y, pos2X, pos2Y, clicX, clicY : integer): boolean;	//fonction qui vérifie si des coordonnées cartésiennes sont dans un rectangle
 begin
 	clicRectangle := false;
 	if (pos1X < clicX) and (clicX < pos2X) then
@@ -781,7 +781,7 @@ end;
 
 
 
-function clicCercle(oX, oY, rayon, clicX, clicY : integer): boolean;	//fonction qui vérifie si des coordonnées catésiennes sont dans un cercle
+function clicCercle(oX, oY, rayon, clicX, clicY : integer): boolean;	//fonction qui vérifie si des coordonnées cartésiennes sont dans un cercle
 begin
 	clicCercle := false;
 	if (((oX - clicX)*(oX - clicX))+((oY - clicY)*(oY - clicY))) <= (rayon*rayon) then
@@ -791,7 +791,7 @@ end;
 
 
 
-procedure lectureBoutonSouris(var x, y : longint {si rien de cliqué retourne (-1,-1)}); 	//retourne les coordonnées catésiennes de la souris après un clic
+procedure lectureBoutonSouris(var x, y : longint {si rien de cliqué retourne (-1,-1)}); 	//retourne les coordonnées cartésiennes de la souris après un clic
 var event : TSDL_event;
 begin
 	x := -1;
